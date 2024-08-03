@@ -12,7 +12,6 @@ function App() {
         <HStack
           alignItems="center"
           justifyContent="center"
-          style={{ height: "100vh" }}
         >
           <Row className="show-grid">
             <Col xl={12}>
