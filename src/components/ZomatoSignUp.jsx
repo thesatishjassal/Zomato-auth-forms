@@ -126,7 +126,7 @@ const ZomatoSignUp = () => {
                 <div>
                   <h3 className="heading poppins-medium">Enter OTP</h3>
                   <p className="action-text poppins-regular">
-                    Verificatio code has been sent to your email
+                    OTP has been sent to your email.
                     <span className="cta phonenumber">
                       {formik.values.email}
                     </span>
