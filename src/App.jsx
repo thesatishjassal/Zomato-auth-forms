@@ -1,5 +1,4 @@
 import "rsuite/dist/rsuite.min.css";
-import ZomotoSigInForm from "./components/ZomatoSignIn";
 import ZomatoSignUp from "./components/ZomatoSignUp";
 import { Container, Content } from "rsuite";
 import { Grid, Row, HStack, Col } from "rsuite";
@@ -14,9 +13,6 @@ function App() {
           justifyContent="center"
         >
           <Row className="show-grid">
-            <Col xl={12}>
-              <ZomotoSigInForm />
-            </Col>
             <Col xl={12}>
               <ZomatoSignUp />
             </Col>

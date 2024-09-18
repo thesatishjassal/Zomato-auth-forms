@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Input } from "rsuite";
 
-const FloatingLabelInput = ({ label, name, value, onChange, disabled }) => {
+const FloatingLabelInput = ({
+  label,
+  name,
+  value,
+  onChange,
+  onBlur,
+  error,     
+  touched,  
+  disabled,
+}) => {
   const [focused, setFocused] = useState(false);
 
   useEffect(() => {
-    if (value) {
-      setFocused(true);
-    } else {
-      setFocused(false);
-    }
+    setFocused(Boolean(value));
   }, [value]);
 
   return (
@@ -18,18 +23,18 @@ const FloatingLabelInput = ({ label, name, value, onChange, disabled }) => {
         name={name}
         value={value}
         onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(value !== "")}
+        onBlur={(e) => {
+          setFocused(value !== "");
+          onBlur(e);  
+        }}
         onChange={onChange}
         size="lg"
-        className={
-          label === "Email" || label === "One Time Password"
-            ? "form-control"
-            : "form-control border-bottom-none"
-        }
+        className={`form-control ${error && touched ? "error-border" : ""}`}
         disabled={disabled}
-        id={label === "Referral Code" ? "mb-5" : ""}
       />
       <label className={focused || value ? "active" : ""}>{label}</label>
+
+      {error && touched && <div className="error-message">{error}</div>}
     </div>
   );
 };

@@ -340,3 +340,17 @@ img.zomato-banner {
 .otp-container input {
     border: 1px solid #e5e5ea;
 }
+.error-border {
+  border-color: #e23744 !important;
+}
+.error-message {
+  color: #e23744 ; /* Red text for the error message */
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+  color: fieldtext !important;
+}
