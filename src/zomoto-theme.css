@@ -354,3 +354,9 @@ input:-internal-autofill-selected {
   background-color: light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
   color: fieldtext !important;
 }
+
+@media only screen and (max-width: 600px) {
+  .auth_card {
+    width: auto !important;
+  }
+}
